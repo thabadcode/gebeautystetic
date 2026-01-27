@@ -1,0 +1,84 @@
+footer {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--fundo-elementos);
+    width: 100%;
+
+    .footer-top {
+        height: var(--altura-header);
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+            width: 3.5rem;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            background-color: var(--fundo-botao);
+            margin-left: auto;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            
+            span {
+                max-width: 10ch;
+                font-weight: bold;
+                color: var(--texto-botao);
+            }
+
+            svg {
+                width: 2.5rem;
+                height: auto;
+                fill: var(--texto-botao); /* Marrom café */
+            }
+        }
+
+        @media (min-width: 768px) {
+            a {
+                transition: background-color var(--transicao), transform var(--transicao), color var(--transicao);
+                svg {
+                    transition: fill var(--transicao);
+                }
+                &:hover {
+                    background-color: var(--fundo-hover);
+                    color: white;
+                    transform: scale(1.05);
+                    svg {
+                        fill: white; /* Fazer a transição suave do Marrom para o branco */
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-container {
+        background-color: var(--fundo-secundario);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0.5rem;
+
+        @media (min-width: 768px) {
+            gap: 1.5rem 10rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+    }
+
+    .footer-bottom {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}

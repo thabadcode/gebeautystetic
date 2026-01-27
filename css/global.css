@@ -1,0 +1,111 @@
+:root {
+    --fundo-body: #FFF5F0;
+    --fundo-elementos: #F2C4A8;
+    --fundo-secundario: #F7D9C4;
+    --fundo-botao: #D98E73;
+    --fundo-hover: #BF755A;
+    --texto-botao: #462f23;
+    --texto: #5C3D2E;
+    
+    --fonte-titulo: 'Cormorant Garamond', serif;
+    --fonte-corpo: 'Montserrat', sans-serif;
+
+    --altura-header: 4.5rem;
+    --transicao: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo-body);
+    color: var(--texto);
+    font-family: var(--fonte-corpo);
+    overflow-x: hidden;
+    width: 100%;
+
+    h1, h2 {
+        font-family: var(--fonte-titulo);
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    button {
+        color: var(--texto-botao);
+        font-family: var(--fonte-corpo);
+        background-color: var(--fundo-botao);
+        border: none;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        font-weight: bold;
+    }
+
+    main {
+        margin-top: var(--altura-header);
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    button {
+        transition: background-color var(--transicao), transform var(--transicao), color var(--transicao);
+
+        &:hover {
+            background-color: var(--fundo-hover);
+            color: white;
+            transform: scale(1.05);
+        }
+    }
+}
+
+.btn-whatsapp {
+    position: fixed;
+    background-color: #25d366;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    transition: filter var(--transicao), transform var(--transicao);
+    z-index: 50;
+
+    svg {
+        width: 3rem;
+        height: auto;
+        fill: white;
+    }
+
+    &.stop {
+        position: absolute;
+    }
+
+    @media (min-width: 768px) {
+        & { /* Ficou grande demais no desktop */
+            width: 4rem;
+            height: 4rem;
+
+            svg {
+                width: 2.5rem;
+            }
+        }
+        &:hover {
+            filter: brightness(1.1) saturate(1.2);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+}

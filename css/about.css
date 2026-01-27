@@ -1,0 +1,8 @@
+#about { /* Aqui só diminui as imagens para evitar "transbordo" mas isso aqui vou mexer mais para frente */
+    .about-image {
+        picture, img {
+            height: 300px;
+            width: 200px;
+        }
+    }
+}
